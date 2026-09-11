@@ -8,14 +8,14 @@ describe("StatusBadge", () => {
     expect(screen.getByText("Liberadas")).toBeInTheDocument();
   });
 
-  it("applies a distinct color class per token so statuses read apart visually", () => {
+  it("applies a distinct color class for the two Mistura Fina statuses", () => {
     const { rerender } = render(<StatusBadge label="Geradas" colorToken="white" />);
     const whiteClass = screen.getByTestId("status-dot").className;
 
-    rerender(<StatusBadge label="Reprovado" colorToken="purple" />);
-    const purpleClass = screen.getByTestId("status-dot").className;
+    rerender(<StatusBadge label="Liberadas" colorToken="green" />);
+    const greenClass = screen.getByTestId("status-dot").className;
 
-    expect(whiteClass).not.toBe(purpleClass);
+    expect(whiteClass).not.toBe(greenClass);
   });
 
   it("falls back to the same neutral color as the known 'gray' token for an unrecognized token", () => {

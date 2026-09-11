@@ -5,10 +5,6 @@ import type { ColorToken } from "../types";
 // para desenhar a legenda estática — os dados de cada ordem já vêm com
 // situacaoLabel/colorToken prontos do backend.
 export const LEGENDA_SITUACOES: { label: string; colorToken: ColorToken }[] = [
-  { label: "Gerada", colorToken: "white" },
-  { label: "Recebida Qualidade", colorToken: "yellow" },
-  { label: "Em Inspeção", colorToken: "red" },
-  { label: "Liberada Qualidade", colorToken: "green" },
-  { label: "Reprovada", colorToken: "purple" },
-  { label: "OF Baixada", colorToken: "blue" },
+  { label: "Geradas", colorToken: "white" },
+  { label: "Liberadas", colorToken: "green" },
 ];

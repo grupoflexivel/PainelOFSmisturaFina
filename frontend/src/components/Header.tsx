@@ -54,8 +54,8 @@ export function Header({
     <header className="border-b border-line bg-surface">
       <div className="flex flex-wrap items-center justify-between gap-4 px-6 py-2.5">
         <div className="flex flex-col gap-0.5">
-          <span className="font-mono text-[11px] uppercase tracking-widest text-ink-faint">Painel de Produção</span>
-          <h1 className="text-lg font-semibold text-accent">Ordens de Fabricação</h1>
+          <span className="font-mono text-[11px] uppercase tracking-widest text-ink-faint">Painel de OFs</span>
+          <h1 className="text-3xl font-extrabold uppercase text-accent">Mistura fina - Matriz</h1>
         </div>
         <div className="flex items-center gap-6">
           {quantidadeAProduzir !== undefined && <Stat label="a produzir" value={quantidadeAProduzir} emphasize />}

@@ -1,4 +1,4 @@
-export type ColorToken = "white" | "yellow" | "red" | "green" | "purple" | "blue" | "gray";
+export type ColorToken = "white" | "green" | "gray";
 
 export interface PainelOrdem {
   numeroOF: string;

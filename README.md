@@ -1,4 +1,4 @@
-# Painel de Produção · OF
+# Mistura fina - Matriz
 
 Reescrita do painel de acompanhamento de Ordens de Fabricação (antigo `PainelOF3.html`), consumindo a API `GET /api/customas/v10/paineisOf` em vez de ser gerado direto no CSP/IRIS.
 
@@ -49,7 +49,7 @@ cp .env.example .env   # preencha PAINEL_API_TOKEN
 docker compose up --build
 ```
 
-Sobe um único container na porta `3000` (ajustável via `PORT`/`ports` no `docker-compose.yml`).
+Sobe um único container na porta `3001` (ajustável via `PORT`/`ports` no `docker-compose.yml`).
 
 ## Configuração (variáveis de ambiente)
 
@@ -60,9 +60,9 @@ Veja `.env.example` para a lista completa. As mais importantes:
 | `PAINEL_API_TOKEN` | — (obrigatório) | Token enviado no header `Authorization` para a API upstream. |
 | `PAINEL_REFRESH_INTERVAL_MINUTES` | `5` | De quanto em quanto tempo o backend busca dados novos na API. O frontend segue esse mesmo intervalo automaticamente. |
 | `PAINEL_API_BASE_URL` | `https://10.1.1.220` | Base da API upstream. |
-| `PAINEL_COD_EMPRESA` / `PAINEL_TIPO_MONITOR` | `1` / `GERAL` | Query params enviados para `/api/customas/v10/paineisOf`. |
+| `PAINEL_COD_EMPRESA` / `PAINEL_TIPO_MONITOR` | `1` / `PESAGEMFINA` | Query params enviados para `/api/customas/v10/paineisOf`. |
 | `PAINEL_API_TLS_REJECT_UNAUTHORIZED` | `false` | O certificado da API upstream é self-signed; mantenha `false` a menos que isso mude. |
 
 ## Mapeamento de status
 
-A cor de cada linha é decidida pelo texto exato que a API manda em `situacaoDescricao` (tabela `CORES_POR_SITUACAO` em `backend/src/mappers.ts`, espelhada em `frontend/src/lib/situacoes.ts` pra legenda), não por um código numérico. As seis já foram confirmadas: `Gerada`, `Recebida Qualidade`, `Em Inspeção`, `Liberada Qualidade`, `Reprovada`, `OF Baixada`. Se a API um dia mandar um texto diferente pra algum desses status (troca de sistema, ajuste de wording etc.), a linha cai no cinza de fallback em vez de quebrar — é só adicionar a grafia nova na tabela.
+A cor de cada linha é decidida pelo texto exato que a API manda em `situacaoDescricao` (tabela `CORES_POR_SITUACAO` em `backend/src/mappers.ts`, espelhada em `frontend/src/lib/situacoes.ts` pra legenda), não por um código numérico. Para o painel de Mistura Fina, a legenda tem apenas duas cores: `Geradas` em branco e `Liberadas` em verde. Se a API um dia mandar um texto diferente, a linha cai no cinza de fallback em vez de quebrar — é só adicionar a grafia nova na tabela.

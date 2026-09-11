@@ -1,11 +1,11 @@
 import { z } from "zod";
 
 const envSchema = z.object({
-  PORT: z.coerce.number().int().positive().default(3000),
+  PORT: z.coerce.number().int().positive().default(3001),
   PAINEL_API_BASE_URL: z.string().url().default("https://10.1.1.220"),
   PAINEL_API_TOKEN: z.string().min(1, "PAINEL_API_TOKEN é obrigatório"),
   PAINEL_COD_EMPRESA: z.string().default("1"),
-  PAINEL_TIPO_MONITOR: z.string().default("GERAL"),
+  PAINEL_TIPO_MONITOR: z.string().default("PESAGEMFINA"),
   PAINEL_REFRESH_INTERVAL_MINUTES: z.coerce.number().positive().default(5),
   // A API expõe HTTPS num IP interno com certificado que o próprio time confirmou
   // ser self-signed (curl só funciona com -k). Mantemos a validação de TLS

@@ -18,11 +18,7 @@ describe("parseQuantidadeBR", () => {
 describe("mapSituacaoColor", () => {
   it.each([
     ["Gerada", "white"],
-    ["Recebida Qualidade", "yellow"],
-    ["Em Inspeção", "red"],
     ["Liberada Qualidade", "green"],
-    ["Reprovada", "purple"],
-    ["OF Baixada", "blue"],
   ])("maps the API's situacaoDescricao %j to color %s", (situacaoDescricao, colorToken) => {
     expect(mapSituacaoColor(situacaoDescricao)).toBe(colorToken);
   });

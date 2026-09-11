@@ -4,19 +4,13 @@ export function parseQuantidadeBR(valor: string): number {
   return Number(comPontoDecimal);
 }
 
-export type ColorToken = "white" | "yellow" | "red" | "green" | "purple" | "blue" | "gray";
+export type ColorToken = "white" | "green" | "gray";
 
-// A cor de cada linha é decidida pelo texto que a própria API manda em
-// `situacaoDescricao` (ex.: "OF Baixada"), não por um código numérico —
-// assim o painel nunca discorda do que a API está de fato dizendo.
-// Todas as seis confirmadas contra a API/usuário real (25-26/08/2026).
+// No painel de Mistura Fina só existem duas cores operacionais:
+// Geradas ficam brancas e Liberadas ficam verdes.
 const CORES_POR_SITUACAO: Record<string, ColorToken> = {
   Gerada: "white",
-  "Recebida Qualidade": "yellow",
-  "Em Inspeção": "red",
   "Liberada Qualidade": "green",
-  Reprovada: "purple",
-  "OF Baixada": "blue",
 };
 
 export function mapSituacaoColor(situacaoDescricao: string): ColorToken {

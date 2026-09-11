@@ -5,22 +5,14 @@ import type { ColorToken } from "../types";
 // ficarem em tons diferentes.
 export const BG_CLASS: Record<ColorToken, string> = {
   white: "bg-st-gerada-fill",
-  yellow: "bg-st-recebido-fill",
-  red: "bg-st-inspecao-fill",
   green: "bg-st-liberada-fill",
-  purple: "bg-st-reprovado-fill",
-  blue: "bg-st-baixada-fill",
   gray: "bg-surface-2",
 };
 
 // Faixa lateral da linha: mesma família de cor do fundo, um tom mais forte.
 export const BORDER_CLASS: Record<ColorToken, string> = {
   white: "border-l-st-gerada-rail",
-  yellow: "border-l-st-recebido-rail",
-  red: "border-l-st-inspecao-rail",
   green: "border-l-st-liberada-rail",
-  purple: "border-l-st-reprovado-rail",
-  blue: "border-l-st-baixada-rail",
   gray: "border-l-ink-faint",
 };
 

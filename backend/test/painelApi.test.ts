@@ -7,11 +7,11 @@ import type { UpstreamPainelResponse } from "../src/upstreamClient.js";
 
 function testConfig(overrides: Partial<Config> = {}): Config {
   return {
-    PORT: 3000,
+    PORT: 3001,
     PAINEL_API_BASE_URL: "https://upstream.invalid",
     PAINEL_API_TOKEN: "test-token",
     PAINEL_COD_EMPRESA: "1",
-    PAINEL_TIPO_MONITOR: "GERAL",
+    PAINEL_TIPO_MONITOR: "PESAGEMFINA",
     PAINEL_REFRESH_INTERVAL_MINUTES: 5,
     PAINEL_API_TLS_REJECT_UNAUTHORIZED: false,
     ...overrides,
@@ -20,7 +20,7 @@ function testConfig(overrides: Partial<Config> = {}): Config {
 
 const sampleUpstream: UpstreamPainelResponse = {
   codEmpresa: "1",
-  tipoMonitor: "GERAL",
+  tipoMonitor: "PESAGEMFINA",
   atualizadoEm: "25/08/2026 15:28:28",
   ordens: [
     {
